@@ -4,4 +4,9 @@ build/
 data/
 logs/
 
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+src/python/src/python_subsystem.egg-info
 
+**.log
