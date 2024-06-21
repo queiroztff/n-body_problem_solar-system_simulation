@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python_subsystem"
+dynamic = ["version"]
+authors = [
+    {name = "Thiago Ferreira de Fança e Queiroz", email = "queiroztff@discente.ufg.br"}
+]
+maintainers = [
+  {name = "Thiago Ferreira de França e Queiroz", email = "queiroztff@gmail.com"}
+]
+description = '''
+This package aims to integrate numerical simulation using Fortran subroutines 
+and real data obtained from the NASA API, with the aim of facilitating data analysis. 
+For more information read the Readme.
+'''
+license = {text = "MIT License"}
+classifiers = [
+ 
+  "Development Status :: 4 - Beta",
+
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Build Tools",
+
+  "License :: OSI Approved :: MIT License",
+
+  "Programming Language :: Python :: 3.12",
+]
+requires-python = ">= 3.12"
+dependencies = [
+    "requests==2.32.3"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.2.2", 
+    "mypy==1.10.0 "
+]
+
+[tool.setuptools.packages.find]
+where = ["src"] 
+include = ["*"]
+exclude = ["tests*"]
