@@ -72,15 +72,15 @@ class FortranSimulationWithNasaInitialConditionConfig(Join):
 
     Attributes
     ----------
-        path: str 
+        _path: str 
             Caminho que contem o arquivo com o mesmo esquema NASA_simulation_config.json
             (default = '../../../../../data/input/python/fortran_simulation_with_NASA_initial_condition_config.json')
     """
 
     def __init__(self, 
-                 path:str = '../../../../../data/input/python/fortran_simulation_with_NASA_initial_condition_config.json') -> None:
+                 _path:str = '../../../../../data/input/python/fortran_simulation_with_NASA_initial_condition_config.json') -> None:
         
-        self.__path = path
+        self.__path = _path
         self.__log: Logger = getLogger(__name__)
 
         absollute_path = os.path.dirname(__file__)
