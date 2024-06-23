@@ -71,7 +71,7 @@ def path_json(tmp_path_factory):
 
 @pytest.fixture()
 def Obj(path_json):
-    obj = NasaSimulationConfig(path=path_json)
+    obj = NasaSimulationConfig(_path=path_json)
     return obj
 
 
