@@ -71,7 +71,7 @@ def path_json(tmp_path_factory):
 
 @pytest.fixture()
 def Obj(path_json):
-    obj = FortranSimulationManualInsertInitialCondition(path=path_json)
+    obj = FortranSimulationManualInsertInitialCondition(_path=path_json)
     return obj
 
 
