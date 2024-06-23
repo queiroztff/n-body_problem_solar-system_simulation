@@ -69,7 +69,7 @@ def path_json(tmp_path_factory):
 
 @pytest.fixture()
 def Obj(path_json):
-    obj = FortranSimulationWithNasaInitialConditionConfig(path=path_json)
+    obj = FortranSimulationWithNasaInitialConditionConfig(_path=path_json)
     return obj
 
 
