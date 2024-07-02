@@ -898,8 +898,8 @@ contains
                                                '                "eps" : ', eps, ',', &
                                                '                "tol" : ', tol, ',', &
                                                '                "step" : {', &
-                                               '                    "hmin" : ', hmax, ',', &
-                                               '                    "hmax" : ', hmin, &
+                                               '                    "hmin" : ', hmin, ',', &
+                                               '                    "hmax" : ', hmax, &
                                                '                }', &
                                                '            },', &
                                                '        "domain" : {', &
