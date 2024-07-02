@@ -255,13 +255,13 @@ class BodyFeatures(HorizonsFile, Gmass, InitialState, Mass, Period, State):
 
         super().__init__(command=search_spkid(body=body, group=group), 
                          obj_data=obj_data,
-                         make_ephem=make_ephem, 
+                         make_ephem=(True if(make_ephem or initial_state) else False), 
                          center=center, 
                          start_time=date_to_jd(start_time),
-                         stop_time=((date_to_jd(stop_time)) if(type(stop_time) != None) else (stop_time + 1)),
-                         step_size=((step_size) if(type(step_size) != None) else ('1d')), 
+                         stop_time=((date_to_jd(stop_time)) if(stop_time != None) else (date_to_jd(start_time) + 1)),
+                         step_size=((step_size) if(step_size != None) else ('1d')), 
                          out_units=out_units)
-
+        
         if(obj_data):
             Gmass.__init__(self, report=self.get_report())
             Mass.__init__(self, report=self.get_report())
