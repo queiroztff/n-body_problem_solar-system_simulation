@@ -43,3 +43,8 @@ dev = [
 where = ["src"] 
 include = ["*"]
 exclude = ["tests*"]
+
+[project.scripts]
+ns = "main:Nasa_Simulation"
+fmi = "main:Fortran_manual_insert"
+fni = "main:Fortran_Nasa_insert"
