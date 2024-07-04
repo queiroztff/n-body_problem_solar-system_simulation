@@ -1,0 +1,8 @@
+Dockerfile
+README.md
+
+**__pycache__
+**.mypy_cache
+**.pytest_cache
+**/src/python_subsystem.egg-info
+**.log
