@@ -4,7 +4,7 @@ Este documento descreve o subsistema Fortran do projeto, abrangendo a compilaç�
 
 ## Compilação do Código-Fonte (modo de desenvolvimento)
 
-Para compilar o código-fonte Fortran em um ambiente Linux, os pacotes **gfortran** e **make** são necessários.
+Para compilar o código-fonte Fortran, um ambiente Linux, e os pacotes **gfortran** e **make** são necessários.
 
 1. **Compilação:** No diretório **src/fortran/**, execute o comando:
    ```bash
@@ -50,9 +50,10 @@ Para executar o subsistema Fortran em produção, utilize um contêiner Docker.
 
 ## Arquivos de Entrada e Saı́da (i/o)
 
-O subsistema Fortran utiliza arquivos de entrada e saída para configurar as simulações e armazenar os resultados.
+O subsistema Fortran utiliza arquivos de entrada e saída, para configurar as simulações e armazenar os resultados.
 
 **Estrutura de Diretórios:**
+
 ```
 .
 ├── src
@@ -96,17 +97,17 @@ Ao executar o arquivo binário **n-body.exe** dentro do diretório **build/fortr
 Localizados no diretório **data/input/fortran/**, os arquivos **__init__.sim**, **\<simulation_name\>.config** e **\<simulation_name\>.ic**. Contém o nome das simulações, as configurações do programa principal, as condições iniciais dos corpos envolvidos no problema e estão dispostos da seguinte forma:
 
 * **\_\_init\_\_.sim** <br>
-Localizado em **data/input/fortran/**, este arquivo contém uma lista de nomes de simulações, que servirão como prefixo para os arquivos de configuração e condições iniciais. A ordem dos nomes no arquivo define a ordem de execução das simulações. <br>
+    Localizado em **data/input/fortran/**, este arquivo contém uma lista de nomes de simulações, que servirão como prefixo para os arquivos de configuração e condições iniciais. A ordem dos nomes no arquivo define a ordem de execução das simulações. <br>
 
-   | Linha |\<registro\>|Descrição|
-   |:------|:----------:|:--------|
-   |1      |**simulation_name**|:**str** indica o prefixo do arquivo que contém as configurações e as condições iniciais dos corpos envolvidos no problema|
-   |2      |**simulation_name-1**| ...|
-   |3      |**simulation_name-2**| ...|
-   |.<br>.<br>.|.<br>.<br>.| ...
+    | Linha |\<registro\>|Descrição|
+    |:------|:----------:|:--------|
+    |1      |**simulation_name**|:**str** indica o prefixo do arquivo que contém as configurações e as condições iniciais dos corpos envolvidos no problema|
+    |2      |**simulation_name-1**| ...|
+    |3      |**simulation_name-2**| ...|
+    |.<br>.<br>.|.<br>.<br>.| ...
 
 * **\<simulation_name\>.config** <br> 
-Localizado em **data/input/fortran/**, este arquivo contém as configurações do programa principal para cada simulação.<br>
+    Localizado em **data/input/fortran/**, este arquivo contém as configurações do programa principal para cada simulação.<br>
 
     | Linha |\<registro\>|Descrição|
     |:------|:----------:|:--------|
@@ -120,7 +121,7 @@ Localizado em **data/input/fortran/**, este arquivo contém as configurações d
     |8      |**time_conversion_factor**|:**float** fator de conversão de tempo|
 
 * **\<simulation_name\>.ic** <br>
-Localizado em **data/input/fortran/**, este arquivo contém as condições iniciais dos corpos envolvidos na simulação.<br>
+    Localizado em **data/input/fortran/**, este arquivo contém as condições iniciais dos corpos envolvidos na simulação.<br>
 
     | Linha |\<registro\>|Descrição|
     |:------|:----------:|:--------|
@@ -139,7 +140,7 @@ Os arquivos contidos em **data/output/<simulation_name>/**, possuem os resultado
 Os ficheiros estão dispostos da seguinte forma:
 
 * **\<simulation_name-1\>.sob** <br>
-Contém a solução numérica do *corpo 1*, onde os registros estão dispostos da seguinte forma: <br>
+    Contém a solução numérica do *corpo 1*, onde os registros estão dispostos da seguinte forma: <br>
 
     | Linha |\<registro\>|Descrição|
     |:------|:----------:|:--------|
@@ -153,14 +154,14 @@ Contém a solução numérica do *corpo 1*, onde os registros estão dispostos d
 
 
 * **\<simulation_name-2\>.sob** <br>
-Contém a solução numérica do *corpo 2*, onde os registros estão dispostos da mesma forma que o aterior.<br>.<br>.<br>.
+    Contém a solução numérica do *corpo 2*, onde os registros estão dispostos da mesma forma que o aterior.<br>.<br>.<br>.
 
 * **\<simulation_name-2\>.sob** <br>
-Contém a solução numérica do *corpo n*, onde os registros estão dispostos da mesma forma que os demais.
+    Contém a solução numérica do *corpo n*, onde os registros estão dispostos da mesma forma que os demais.
 
 * **report.json** <br>
-Localizado em **data/output/<simulation_name>/**, este arquivo contém informações gerais sobre a simulação.<br>
-Esse arquivo possui o seguite esquema:
+    Localizado em **data/output/<simulation_name>/**, este arquivo contém informações gerais sobre a simulação.<br>
+    Esse arquivo possui o seguite esquema:
 
     ```json
     {
