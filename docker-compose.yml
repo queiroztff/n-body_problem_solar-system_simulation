@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  fortran_subsystem:
+    build:
+      context: src/fortran
+      dockerfile: Dockerfile
+    volumes:
+      - ./data/input/fortran:/app/data/input/fortra
+      - ./data/output:/app/data/output
+    image: fortran_subsystem
+    container_name: n-body_simulation_fortran
+
+  python_subsytem:
+    build:
+      context: src/python
+      dockerfile: Dockerfile
+    volumes:
+      - ./data/input/fortran:/app/data/input/fortran
+      - ./data/input/python:/app/data/input/python
+      - ./data/output:/app/data/output
+      - ./logs/python:/app/logs/python
+    image: python_subsystem
+    container_name: n-body_simulation_python
+    tty: true
