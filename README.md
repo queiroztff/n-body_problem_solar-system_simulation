@@ -558,8 +558,7 @@ Os ficheiros estão dispostos da seguinte forma:
     |:------|:----------:|:--------|
     |1      |$t_0$ $x_0$ $y_0$ $z^*_0$ $vx_0$ $vy_0$ $vz^*_0$ $err\_S_0$ $err\_V_0$|...       |
     |.<br>.<br>.|.<br>.<br>.|         |
-    |g      |$t_g$ $x_g$ $y_g$ $z^*_g$ $vx_g$ $vy_g$ $err\_S_g$ $err\_V_g$|:**float** Onde $\vec{S}_g = x_g\hat{e}_1 + y_g\hat{e}_2 + z^*_g\hat{e}_3$ <br> e $\vec{V}_g = vx_g\hat{e}_1 + vy_g\hat{e}_2 + vz^*_g\hat{e}_3$ <br> representa a posição e a velocidade vetorial do corpo    Localizado em **data/output/<simulation_name>/**, este arquivo contém informações gerais sobre a simulação.
-    Esse arquivo possui o seguite esquema: no <br> instante $t_g$. Onde $err\_S_g$ $err\_V_g$ <br>representa o maior erro dentre as coordenadas da posição e da velocidade|
+    |g      |$t_g$ $x_g$ $y_g$ $z^*_g$ $vx_g$ $vy_g$ $err\_S_g$ $err\_V_g$ | :**float** Onde $\vec{S}_g = x_g\hat{e}_1 + y_g\hat{e}_2 + z^*_g\hat{e}_3$ <br> e $\vec{V}_g = vx_g\hat{e}_1 + vy_g\hat{e}_2 + vz^*_g\hat{e}_3$ <br> representa a posição e a velocidade vetorial do corpo. Localizado em **data/output/<simulation_name>/**, este arquivo contém informações gerais sobre a simulação. Esse arquivo possui o seguite esquema: no instante $t_g$. Onde $err\_S_g$ $err\_V_g$ representa o maior erro dentre as coordenadas da posição e da velocidade|
     |.<br>.<br>.|.<br>.<br>.|         |
     |n      |$t_n$ $x_n$ $y_n$ $z^*_n$ $vx_n$ $vy_n$ $err\_S_n$ $err\_V_n$|...      |
 
